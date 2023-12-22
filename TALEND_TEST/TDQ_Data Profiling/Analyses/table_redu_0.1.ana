@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataquality.analysis:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.indicators.columnset="http://dataquality.indicators.columnset" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010" xmi:id="_fPLVQJzKEe6z2sl5cqZSuA" name="table_redu" creationDate="2023-12-17T16:23:18.853+0530" defaultContext="Default">
+  <clientDependency href="../../metadata/connections/MySQL_0.1.item#_L9UfgJzJEe6z2sl5cqZSuA"/>
+  <taggedValue xmi:id="_fPLVQZzKEe6z2sl5cqZSuA" tag="Status" value="development"/>
+  <taggedValue xmi:id="_fPLVQpzKEe6z2sl5cqZSuA" tag="Author" value="rohanbs@trial12108.ap.talend.com"/>
+  <taggedValue xmi:id="_fPLVQ5zKEe6z2sl5cqZSuA" tag="Purpose" value=""/>
+  <taggedValue xmi:id="_fPLVRJzKEe6z2sl5cqZSuA" tag="Description" value=""/>
+  <taggedValue xmi:id="_fPLVRZzKEe6z2sl5cqZSuA" tag="Version" value="0.1"/>
+  <taggedValue xmi:id="_mUVaEZzKEe6z2sl5cqZSuA" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+  <taggedValue xmi:id="_mUVaFJzKEe6z2sl5cqZSuA" tag="Ignore Null" value="false"/>
+  <taggedValue xmi:id="_mUVaFZzKEe6z2sl5cqZSuA" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+  <context xmi:id="_fPLVRpzKEe6z2sl5cqZSuA">
+    <connection href="../../metadata/connections/MySQL_0.1.item#_ux3HoJwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rUOUpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rUOVpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rUOWpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rUOXpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rUOYpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rdYQpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rdYRpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rdYSpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rdYTpwoEe6o7eKlIoIcbA"/>
+    <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/MySQL_0.1.item#_0rdYUpwoEe6o7eKlIoIcbA"/>
+  </context>
+  <results xmi:id="_fPLVR5zKEe6z2sl5cqZSuA">
+    <resultMetadata xmi:id="_fPLVSJzKEe6z2sl5cqZSuA" executionDate="2023-12-17T16:24:08.877+0530" executionDuration="34" message="" executionNumber="1" lastRunOk="true" lastExecutionNumberOk="1"/>
+    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_mUVaEpzKEe6z2sl5cqZSuA" count="5" computed="true" matchingValueCount="5">
+      <analyzedElement xsi:type="relational:TdTable" href="../../metadata/connections/MySQL_0.1.item#_0rUOUZwoEe6o7eKlIoIcbA"/>
+      <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Row Comparison/Row_Comparison_0.1.definition#_jMh4gJE3Ed2HGNmGoaS-_w"/>
+      <instantiatedExpressions xmi:id="_msHn8JzKEe6z2sl5cqZSuA" body="SELECT COUNT(*) FROM `talendpro`.`orders_src` A LEFT JOIN `talendpro`.`orders_tgt` B ON ( (A.`order_id` = B.`order_id`)  AND  (A.`product_id` = B.`product_id`)  AND  (A.`sales_amt` = B.`sales_amt`)  AND  (A.`created_datetime` = B.`created_datetime`)  AND  (A.`updated_datetime` = B.`updated_datetime`) ) WHERE (B.`order_id` IS NULL  AND B.`product_id` IS NULL  AND B.`sales_amt` IS NULL  AND B.`created_datetime` IS NULL  AND B.`updated_datetime` IS NULL )" language="SQL"/>
+      <builtInIndicatorDefinition xmi:id="_mr928JzKEe6z2sl5cqZSuA" name="Row Comparison" label="Row Comparison">
+        <taggedValue xmi:id="_mr928ZzKEe6z2sl5cqZSuA" tag="Purpose" value="Compare content of two column sets"/>
+        <taggedValue xmi:id="_mr928pzKEe6z2sl5cqZSuA" tag="Description" value="Counts the number of data from a column set A that match data of a column set B"/>
+        <sqlGenericExpression xmi:id="_mr9285zKEe6z2sl5cqZSuA" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> LEFT JOIN &lt;%=__TABLE_NAME_2__%> ON (&lt;%=__JOIN_CLAUSE__%>) WHERE (&lt;%=__WHERE_CLAUSE__%>)" language="SQL"/>
+        <sqlGenericExpression xmi:id="_mr929JzKEe6z2sl5cqZSuA" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> LEFT OUTER JOIN &lt;%=__TABLE_NAME_2__%> ON (&lt;%=__JOIN_CLAUSE__%>) WHERE (&lt;%=__WHERE_CLAUSE__%>)" language="Hive"/>
+      </builtInIndicatorDefinition>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rUOUpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rUOVpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rUOWpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rUOXpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rUOYpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rdYQpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rdYRpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rdYSpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rdYTpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rdYUpwoEe6o7eKlIoIcbA"/>
+    </indicators>
+    <indicators xsi:type="dataquality.indicators.columnset:RowMatchingIndicator" xmi:id="_mUVaE5zKEe6z2sl5cqZSuA" count="5" computed="true" matchingValueCount="5">
+      <analyzedElement xsi:type="relational:TdTable" href="../../metadata/connections/MySQL_0.1.item#_0rdYQZwoEe6o7eKlIoIcbA"/>
+      <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Row Comparison/Row_Comparison_0.1.definition#_jMh4gJE3Ed2HGNmGoaS-_w"/>
+      <instantiatedExpressions xmi:id="_msHn8ZzKEe6z2sl5cqZSuA" body="SELECT COUNT(*) FROM `talendpro`.`orders_tgt` A LEFT JOIN `talendpro`.`orders_src` B ON ( (A.`order_id` = B.`order_id`)  AND  (A.`product_id` = B.`product_id`)  AND  (A.`sales_amt` = B.`sales_amt`)  AND  (A.`created_datetime` = B.`created_datetime`)  AND  (A.`updated_datetime` = B.`updated_datetime`) ) WHERE (B.`order_id` IS NULL  AND B.`product_id` IS NULL  AND B.`sales_amt` IS NULL  AND B.`created_datetime` IS NULL  AND B.`updated_datetime` IS NULL )" language="SQL"/>
+      <builtInIndicatorDefinition xmi:id="_mr_sIJzKEe6z2sl5cqZSuA" name="Row Comparison" label="Row Comparison">
+        <taggedValue xmi:id="_mr_sIZzKEe6z2sl5cqZSuA" tag="Purpose" value="Compare content of two column sets"/>
+        <taggedValue xmi:id="_mr_sIpzKEe6z2sl5cqZSuA" tag="Description" value="Counts the number of data from a column set A that match data of a column set B"/>
+        <sqlGenericExpression xmi:id="_mr_sI5zKEe6z2sl5cqZSuA" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> LEFT JOIN &lt;%=__TABLE_NAME_2__%> ON (&lt;%=__JOIN_CLAUSE__%>) WHERE (&lt;%=__WHERE_CLAUSE__%>)" language="SQL"/>
+        <sqlGenericExpression xmi:id="_mr_sJJzKEe6z2sl5cqZSuA" body="SELECT COUNT(*) FROM &lt;%=__TABLE_NAME__%> LEFT OUTER JOIN &lt;%=__TABLE_NAME_2__%> ON (&lt;%=__JOIN_CLAUSE__%>) WHERE (&lt;%=__WHERE_CLAUSE__%>)" language="Hive"/>
+      </builtInIndicatorDefinition>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rdYQpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rdYRpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rdYSpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rdYTpwoEe6o7eKlIoIcbA"/>
+      <columnSetA href="../../metadata/connections/MySQL_0.1.item#_0rdYUpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rUOUpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rUOVpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rUOWpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rUOXpwoEe6o7eKlIoIcbA"/>
+      <columnSetB href="../../metadata/connections/MySQL_0.1.item#_0rUOYpwoEe6o7eKlIoIcbA"/>
+    </indicators>
+  </results>
+  <parameters xmi:id="_fPLVSZzKEe6z2sl5cqZSuA" analysisType="Columns Comparison Analysis"/>
+  <contextType xmi:id="_mUVaEJzKEe6z2sl5cqZSuA" confirmationNeeded="false" hide="false" name="Default"/>
+</dataquality.analysis:Analysis>

@@ -1,0 +1,6 @@
+{
+  "reference_projects" : [ {
+    "project" : "REFERENCE_PROJECT",
+    "branch" : "main"
+  } ]
+}
